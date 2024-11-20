@@ -44,5 +44,14 @@ class ChatBotCommandListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ChatBotCommandParser#helpCommand.
+    def enterHelpCommand(self, ctx:ChatBotCommandParser.HelpCommandContext):
+        pass
+
+    # Exit a parse tree produced by ChatBotCommandParser#helpCommand.
+    def exitHelpCommand(self, ctx:ChatBotCommandParser.HelpCommandContext):
+        pass
+
+
 
 del ChatBotCommandParser

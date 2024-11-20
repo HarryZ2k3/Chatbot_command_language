@@ -10,15 +10,16 @@ else:
 
 def serializedATN():
     return [
-        4,1,12,31,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,1,0,1,0,3,0,12,8,0,
-        1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
-        1,3,1,3,0,0,4,0,2,4,6,0,0,28,0,11,1,0,0,0,2,13,1,0,0,0,4,19,1,0,
-        0,0,6,22,1,0,0,0,8,12,3,2,1,0,9,12,3,4,2,0,10,12,3,6,3,0,11,8,1,
-        0,0,0,11,9,1,0,0,0,11,10,1,0,0,0,12,1,1,0,0,0,13,14,5,1,0,0,14,15,
-        5,2,0,0,15,16,5,10,0,0,16,17,5,3,0,0,17,18,5,11,0,0,18,3,1,0,0,0,
-        19,20,5,4,0,0,20,21,5,5,0,0,21,5,1,0,0,0,22,23,5,6,0,0,23,24,5,2,
-        0,0,24,25,5,10,0,0,25,26,5,7,0,0,26,27,5,8,0,0,27,28,5,9,0,0,28,
-        29,5,11,0,0,29,7,1,0,0,0,1,11
+        4,1,13,36,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,1,0,1,0,1,0,1,
+        0,3,0,15,8,0,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,3,1,3,1,3,1,3,
+        1,3,1,3,1,3,1,3,1,4,1,4,1,4,0,0,5,0,2,4,6,8,0,0,33,0,14,1,0,0,0,
+        2,16,1,0,0,0,4,22,1,0,0,0,6,25,1,0,0,0,8,33,1,0,0,0,10,15,3,2,1,
+        0,11,15,3,4,2,0,12,15,3,6,3,0,13,15,3,8,4,0,14,10,1,0,0,0,14,11,
+        1,0,0,0,14,12,1,0,0,0,14,13,1,0,0,0,15,1,1,0,0,0,16,17,5,1,0,0,17,
+        18,5,2,0,0,18,19,5,11,0,0,19,20,5,3,0,0,20,21,5,12,0,0,21,3,1,0,
+        0,0,22,23,5,4,0,0,23,24,5,5,0,0,24,5,1,0,0,0,25,26,5,6,0,0,26,27,
+        5,2,0,0,27,28,5,11,0,0,28,29,5,7,0,0,29,30,5,8,0,0,30,31,5,9,0,0,
+        31,32,5,12,0,0,32,7,1,0,0,0,33,34,5,10,0,0,34,9,1,0,0,0,1,14
     ]
 
 class ChatBotCommandParser ( Parser ):
@@ -32,20 +33,22 @@ class ChatBotCommandParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'create'", "'event'", "'at'", "'show'", 
-                     "'tasks'", "'update'", "'change'", "'time'", "'to'" ]
+                     "'tasks'", "'update'", "'change'", "'time'", "'to'", 
+                     "'help'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "QUOTEDSTRING", "DATETIME", 
-                      "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "QUOTEDSTRING", 
+                      "DATETIME", "WS" ]
 
     RULE_command = 0
     RULE_createEventCommand = 1
     RULE_showTasksCommand = 2
     RULE_updateEventCommand = 3
+    RULE_helpCommand = 4
 
     ruleNames =  [ "command", "createEventCommand", "showTasksCommand", 
-                   "updateEventCommand" ]
+                   "updateEventCommand", "helpCommand" ]
 
     EOF = Token.EOF
     T__0=1
@@ -57,9 +60,10 @@ class ChatBotCommandParser ( Parser ):
     T__6=7
     T__7=8
     T__8=9
-    QUOTEDSTRING=10
-    DATETIME=11
-    WS=12
+    T__9=10
+    QUOTEDSTRING=11
+    DATETIME=12
+    WS=13
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -89,6 +93,10 @@ class ChatBotCommandParser ( Parser ):
             return self.getTypedRuleContext(ChatBotCommandParser.UpdateEventCommandContext,0)
 
 
+        def helpCommand(self):
+            return self.getTypedRuleContext(ChatBotCommandParser.HelpCommandContext,0)
+
+
         def getRuleIndex(self):
             return ChatBotCommandParser.RULE_command
 
@@ -108,23 +116,28 @@ class ChatBotCommandParser ( Parser ):
         localctx = ChatBotCommandParser.CommandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_command)
         try:
-            self.state = 11
+            self.state = 14
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 8
+                self.state = 10
                 self.createEventCommand()
                 pass
             elif token in [4]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 9
+                self.state = 11
                 self.showTasksCommand()
                 pass
             elif token in [6]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 10
+                self.state = 12
                 self.updateEventCommand()
+                pass
+            elif token in [10]:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 13
+                self.helpCommand()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -171,15 +184,15 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_createEventCommand)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 13
-            self.match(ChatBotCommandParser.T__0)
-            self.state = 14
-            self.match(ChatBotCommandParser.T__1)
-            self.state = 15
-            self.match(ChatBotCommandParser.QUOTEDSTRING)
             self.state = 16
-            self.match(ChatBotCommandParser.T__2)
+            self.match(ChatBotCommandParser.T__0)
             self.state = 17
+            self.match(ChatBotCommandParser.T__1)
+            self.state = 18
+            self.match(ChatBotCommandParser.QUOTEDSTRING)
+            self.state = 19
+            self.match(ChatBotCommandParser.T__2)
+            self.state = 20
             self.match(ChatBotCommandParser.DATETIME)
         except RecognitionException as re:
             localctx.exception = re
@@ -218,9 +231,9 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_showTasksCommand)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 19
+            self.state = 22
             self.match(ChatBotCommandParser.T__3)
-            self.state = 20
+            self.state = 23
             self.match(ChatBotCommandParser.T__4)
         except RecognitionException as re:
             localctx.exception = re
@@ -264,20 +277,59 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_updateEventCommand)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 22
-            self.match(ChatBotCommandParser.T__5)
-            self.state = 23
-            self.match(ChatBotCommandParser.T__1)
-            self.state = 24
-            self.match(ChatBotCommandParser.QUOTEDSTRING)
             self.state = 25
-            self.match(ChatBotCommandParser.T__6)
+            self.match(ChatBotCommandParser.T__5)
             self.state = 26
-            self.match(ChatBotCommandParser.T__7)
+            self.match(ChatBotCommandParser.T__1)
             self.state = 27
-            self.match(ChatBotCommandParser.T__8)
+            self.match(ChatBotCommandParser.QUOTEDSTRING)
             self.state = 28
+            self.match(ChatBotCommandParser.T__6)
+            self.state = 29
+            self.match(ChatBotCommandParser.T__7)
+            self.state = 30
+            self.match(ChatBotCommandParser.T__8)
+            self.state = 31
             self.match(ChatBotCommandParser.DATETIME)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class HelpCommandContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return ChatBotCommandParser.RULE_helpCommand
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterHelpCommand" ):
+                listener.enterHelpCommand(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitHelpCommand" ):
+                listener.exitHelpCommand(self)
+
+
+
+
+    def helpCommand(self):
+
+        localctx = ChatBotCommandParser.HelpCommandContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 8, self.RULE_helpCommand)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 33
+            self.match(ChatBotCommandParser.T__9)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

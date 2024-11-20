@@ -18,6 +18,26 @@ class ChatBotCommandVisitor(ParseTreeVisitor):
         event_name = ctx.STRING().getText().strip('"')
         datetime = ctx.DATETIME().getText()
         return f"Updating event: '{event_name}' to new time {datetime}"
+    def visitHelpCommand(self, ctx):
+        print("""
+Available commands:
+1. Create an event:
+   Syntax: create event "<event_name>" at <YYYY-MM-DD HH:MM>
+   Example: create event "Team Meeting" at 2024-11-20 10:00
+
+2. Show all tasks:
+   Syntax: show tasks
+
+3. Update an event:
+   Syntax: update event "<event_name>" change time to <YYYY-MM-DD HH:MM>
+   Example: update event "Team Meeting" change time to 2024-11-20 14:00
+
+4. Help:
+   Syntax: help
+
+5. Exit:
+   Syntax: exit or quit
+        """)
 
 
 def main():

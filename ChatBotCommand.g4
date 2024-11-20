@@ -5,6 +5,7 @@ command
     : createEventCommand
     | showTasksCommand
     | updateEventCommand
+    | helpCommand
     ;
 
 createEventCommand
@@ -27,7 +28,10 @@ QUOTEDSTRING
 DATETIME
     : DIGIT DIGIT DIGIT DIGIT '-' DIGIT DIGIT '-' DIGIT DIGIT ' ' DIGIT DIGIT ':' DIGIT DIGIT
     ;
-
+helpCommand
+    : 'help'
+    ;
+    
 fragment DIGIT
     : [0-9]
     ;
