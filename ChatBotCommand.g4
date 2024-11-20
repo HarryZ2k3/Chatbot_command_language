@@ -1,41 +1,61 @@
 grammar ChatBotCommand;
 
-// Parser Rules
+// Entry point
 command
-    : createEventCommand
-    | showTasksCommand
-    | updateEventCommand
+    : createEvent
+    | showTasks
+    | updateEvent
     | helpCommand
+    | showEvent
+    | createTasks
     ;
 
-createEventCommand
-    : 'create' 'event' QUOTEDSTRING 'at' DATETIME
+// Rules for specific commands
+createEvent
+    : 'create' 'event' STRING 'at' DATETIME
     ;
 
-showTasksCommand
+showTasks
     : 'show' 'tasks'
     ;
 
-updateEventCommand
-    : 'update' 'event' QUOTEDSTRING 'change' 'time' 'to' DATETIME
+updateEvent
+    : 'update' 'event' STRING 'change' 'time' 'to' DATETIME
     ;
 
-// Lexer Rules
-QUOTEDSTRING
+helpCommand
+    : 'help'
+    ;
+
+showEvent
+    : 'show' 'event'
+    ;
+
+createTasks
+    : 'create' 'tasks' 'for' STRING ':' STRING (',' STRING)*
+    ;
+
+// Tokens
+STRING
     : '"' ~["]* '"'
     ;
 
 DATETIME
     : DIGIT DIGIT DIGIT DIGIT '-' DIGIT DIGIT '-' DIGIT DIGIT ' ' DIGIT DIGIT ':' DIGIT DIGIT
     ;
-helpCommand
-    : 'help'
+
+COLON
+    : ':'
     ;
-    
+
+COMMA
+    : ','
+    ;
+
 fragment DIGIT
     : [0-9]
     ;
 
 WS
-    : [ \t\n\r]+ -> skip
+    : [ \t\r\n]+ -> skip
     ;

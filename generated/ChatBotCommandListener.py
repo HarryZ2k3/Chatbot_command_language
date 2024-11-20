@@ -17,30 +17,30 @@ class ChatBotCommandListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by ChatBotCommandParser#createEventCommand.
-    def enterCreateEventCommand(self, ctx:ChatBotCommandParser.CreateEventCommandContext):
+    # Enter a parse tree produced by ChatBotCommandParser#createEvent.
+    def enterCreateEvent(self, ctx:ChatBotCommandParser.CreateEventContext):
         pass
 
-    # Exit a parse tree produced by ChatBotCommandParser#createEventCommand.
-    def exitCreateEventCommand(self, ctx:ChatBotCommandParser.CreateEventCommandContext):
-        pass
-
-
-    # Enter a parse tree produced by ChatBotCommandParser#showTasksCommand.
-    def enterShowTasksCommand(self, ctx:ChatBotCommandParser.ShowTasksCommandContext):
-        pass
-
-    # Exit a parse tree produced by ChatBotCommandParser#showTasksCommand.
-    def exitShowTasksCommand(self, ctx:ChatBotCommandParser.ShowTasksCommandContext):
+    # Exit a parse tree produced by ChatBotCommandParser#createEvent.
+    def exitCreateEvent(self, ctx:ChatBotCommandParser.CreateEventContext):
         pass
 
 
-    # Enter a parse tree produced by ChatBotCommandParser#updateEventCommand.
-    def enterUpdateEventCommand(self, ctx:ChatBotCommandParser.UpdateEventCommandContext):
+    # Enter a parse tree produced by ChatBotCommandParser#showTasks.
+    def enterShowTasks(self, ctx:ChatBotCommandParser.ShowTasksContext):
         pass
 
-    # Exit a parse tree produced by ChatBotCommandParser#updateEventCommand.
-    def exitUpdateEventCommand(self, ctx:ChatBotCommandParser.UpdateEventCommandContext):
+    # Exit a parse tree produced by ChatBotCommandParser#showTasks.
+    def exitShowTasks(self, ctx:ChatBotCommandParser.ShowTasksContext):
+        pass
+
+
+    # Enter a parse tree produced by ChatBotCommandParser#updateEvent.
+    def enterUpdateEvent(self, ctx:ChatBotCommandParser.UpdateEventContext):
+        pass
+
+    # Exit a parse tree produced by ChatBotCommandParser#updateEvent.
+    def exitUpdateEvent(self, ctx:ChatBotCommandParser.UpdateEventContext):
         pass
 
 
@@ -50,6 +50,24 @@ class ChatBotCommandListener(ParseTreeListener):
 
     # Exit a parse tree produced by ChatBotCommandParser#helpCommand.
     def exitHelpCommand(self, ctx:ChatBotCommandParser.HelpCommandContext):
+        pass
+
+
+    # Enter a parse tree produced by ChatBotCommandParser#showEvent.
+    def enterShowEvent(self, ctx:ChatBotCommandParser.ShowEventContext):
+        pass
+
+    # Exit a parse tree produced by ChatBotCommandParser#showEvent.
+    def exitShowEvent(self, ctx:ChatBotCommandParser.ShowEventContext):
+        pass
+
+
+    # Enter a parse tree produced by ChatBotCommandParser#createTasks.
+    def enterCreateTasks(self, ctx:ChatBotCommandParser.CreateTasksContext):
+        pass
+
+    # Exit a parse tree produced by ChatBotCommandParser#createTasks.
+    def exitCreateTasks(self, ctx:ChatBotCommandParser.CreateTasksContext):
         pass
 
 

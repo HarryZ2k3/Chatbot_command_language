@@ -59,6 +59,18 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUpdateEventCommand(ChatBotCommandParser.UpdateEventCommandContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterHelpCommand(ChatBotCommandParser.HelpCommandContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitHelpCommand(ChatBotCommandParser.HelpCommandContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
