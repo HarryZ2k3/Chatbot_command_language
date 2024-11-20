@@ -1,4 +1,4 @@
-grammar commands;
+grammar ChatBotCommand;
 
 // Parser Rules
 command
