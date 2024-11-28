@@ -117,6 +117,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCommand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCommand(this);
+		}
 	}
 
 	public final CommandContext command() throws RecognitionException {
@@ -189,6 +197,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_createEvent; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCreateEvent(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCreateEvent(this);
+		}
 	}
 
 	public final CreateEventContext createEvent() throws RecognitionException {
@@ -226,6 +242,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_showTasks; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterShowTasks(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitShowTasks(this);
+		}
 	}
 
 	public final ShowTasksContext showTasks() throws RecognitionException {
@@ -259,6 +283,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_updateEvent; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterUpdateEvent(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitUpdateEvent(this);
+		}
 	}
 
 	public final UpdateEventContext updateEvent() throws RecognitionException {
@@ -300,6 +332,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_helpCommand; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterHelpCommand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitHelpCommand(this);
+		}
 	}
 
 	public final HelpCommandContext helpCommand() throws RecognitionException {
@@ -329,6 +369,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_showEvent; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterShowEvent(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitShowEvent(this);
+		}
 	}
 
 	public final ShowEventContext showEvent() throws RecognitionException {
@@ -369,6 +417,14 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_createTasks; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCreateTasks(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCreateTasks(this);
+		}
 	}
 
 	public final CreateTasksContext createTasks() throws RecognitionException {
