@@ -17,14 +17,14 @@ public class ChatBotCommandParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, STRING=12, DATETIME=13, COLON=14, COMMA=15, WS=16;
+		T__9=10, T__10=11, T__11=12, T__12=13, STRING=14, DATETIME=15, WS=16;
 	public static final int
 		RULE_command = 0, RULE_createEvent = 1, RULE_showTasks = 2, RULE_updateEvent = 3, 
-		RULE_helpCommand = 4, RULE_showEvent = 5, RULE_createTasks = 6;
+		RULE_helpCommand = 4, RULE_showEvent = 5, RULE_createTasks = 6, RULE_timeToEvent = 7;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"command", "createEvent", "showTasks", "updateEvent", "helpCommand", 
-			"showEvent", "createTasks"
+			"showEvent", "createTasks", "timeToEvent"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -32,14 +32,14 @@ public class ChatBotCommandParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'create'", "'event'", "'at'", "'show'", "'tasks'", "'update'", 
-			"'change'", "'time'", "'to'", "'help'", "'for'", null, null, "':'", "','"
+			"'change'", "'time'", "'to'", "'help'", "'for'", "':'", "','"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			"STRING", "DATETIME", "COLON", "COMMA", "WS"
+			null, null, "STRING", "DATETIME", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -113,67 +113,69 @@ public class ChatBotCommandParser extends Parser {
 		public CreateTasksContext createTasks() {
 			return getRuleContext(CreateTasksContext.class,0);
 		}
+		public TimeToEventContext timeToEvent() {
+			return getRuleContext(TimeToEventContext.class,0);
+		}
 		public CommandContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCommand(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCommand(this);
-		}
 	}
 
 	public final CommandContext command() throws RecognitionException {
 		CommandContext _localctx = new CommandContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_command);
 		try {
-			setState(20);
+			setState(23);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(14);
+				setState(16);
 				createEvent();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(15);
+				setState(17);
 				showTasks();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(16);
+				setState(18);
 				updateEvent();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(17);
+				setState(19);
 				helpCommand();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(18);
+				setState(20);
 				showEvent();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(19);
+				setState(21);
 				createTasks();
+				}
+				break;
+			case 7:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(22);
+				timeToEvent();
 				}
 				break;
 			}
@@ -197,14 +199,6 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_createEvent; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCreateEvent(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCreateEvent(this);
-		}
 	}
 
 	public final CreateEventContext createEvent() throws RecognitionException {
@@ -213,15 +207,15 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
-			match(T__0);
-			setState(23);
-			match(T__1);
-			setState(24);
-			match(STRING);
 			setState(25);
-			match(T__2);
+			match(T__0);
 			setState(26);
+			match(T__1);
+			setState(27);
+			match(STRING);
+			setState(28);
+			match(T__2);
+			setState(29);
 			match(DATETIME);
 			}
 		}
@@ -242,14 +236,6 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_showTasks; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterShowTasks(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitShowTasks(this);
-		}
 	}
 
 	public final ShowTasksContext showTasks() throws RecognitionException {
@@ -258,9 +244,9 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(28);
+			setState(31);
 			match(T__3);
-			setState(29);
+			setState(32);
 			match(T__4);
 			}
 		}
@@ -283,14 +269,6 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_updateEvent; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterUpdateEvent(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitUpdateEvent(this);
-		}
 	}
 
 	public final UpdateEventContext updateEvent() throws RecognitionException {
@@ -299,19 +277,19 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(31);
-			match(T__5);
-			setState(32);
-			match(T__1);
-			setState(33);
-			match(STRING);
 			setState(34);
-			match(T__6);
+			match(T__5);
 			setState(35);
-			match(T__7);
+			match(T__1);
 			setState(36);
-			match(T__8);
+			match(STRING);
 			setState(37);
+			match(T__6);
+			setState(38);
+			match(T__7);
+			setState(39);
+			match(T__8);
+			setState(40);
 			match(DATETIME);
 			}
 		}
@@ -332,14 +310,6 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_helpCommand; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterHelpCommand(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitHelpCommand(this);
-		}
 	}
 
 	public final HelpCommandContext helpCommand() throws RecognitionException {
@@ -348,7 +318,7 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(39);
+			setState(42);
 			match(T__9);
 			}
 		}
@@ -369,14 +339,6 @@ public class ChatBotCommandParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_showEvent; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterShowEvent(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitShowEvent(this);
-		}
 	}
 
 	public final ShowEventContext showEvent() throws RecognitionException {
@@ -385,9 +347,9 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(41);
+			setState(44);
 			match(T__3);
-			setState(42);
+			setState(45);
 			match(T__1);
 			}
 		}
@@ -408,23 +370,10 @@ public class ChatBotCommandParser extends Parser {
 		public TerminalNode STRING(int i) {
 			return getToken(ChatBotCommandParser.STRING, i);
 		}
-		public TerminalNode COLON() { return getToken(ChatBotCommandParser.COLON, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(ChatBotCommandParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(ChatBotCommandParser.COMMA, i);
-		}
 		public CreateTasksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_createTasks; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).enterCreateTasks(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ChatBotCommandListener ) ((ChatBotCommandListener)listener).exitCreateTasks(this);
-		}
 	}
 
 	public final CreateTasksContext createTasks() throws RecognitionException {
@@ -434,31 +383,31 @@ public class ChatBotCommandParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(44);
-			match(T__0);
-			setState(45);
-			match(T__4);
-			setState(46);
-			match(T__10);
 			setState(47);
-			match(STRING);
+			match(T__0);
 			setState(48);
-			match(COLON);
+			match(T__4);
 			setState(49);
+			match(T__10);
+			setState(50);
 			match(STRING);
-			setState(54);
+			setState(51);
+			match(T__11);
+			setState(52);
+			match(STRING);
+			setState(57);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==COMMA) {
+			while (_la==T__12) {
 				{
 				{
-				setState(50);
-				match(COMMA);
-				setState(51);
+				setState(53);
+				match(T__12);
+				setState(54);
 				match(STRING);
 				}
 				}
-				setState(56);
+				setState(59);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -475,42 +424,82 @@ public class ChatBotCommandParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
+	public static class TimeToEventContext extends ParserRuleContext {
+		public TerminalNode STRING() { return getToken(ChatBotCommandParser.STRING, 0); }
+		public TimeToEventContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_timeToEvent; }
+	}
+
+	public final TimeToEventContext timeToEvent() throws RecognitionException {
+		TimeToEventContext _localctx = new TimeToEventContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_timeToEvent);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(60);
+			match(T__7);
+			setState(61);
+			match(T__8);
+			setState(62);
+			match(T__1);
+			setState(63);
+			match(STRING);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\u0004\u0001\u0010:\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u0010B\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
-		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0001\u0000\u0001\u0000\u0001"+
-		"\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0003\u0000\u0015\b\u0000\u0001"+
-		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0002\u0001\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0003\u0001"+
-		"\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0004\u0001"+
-		"\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001"+
-		"\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0005"+
-		"\u00065\b\u0006\n\u0006\f\u00068\t\u0006\u0001\u0006\u0000\u0000\u0007"+
-		"\u0000\u0002\u0004\u0006\b\n\f\u0000\u00008\u0000\u0014\u0001\u0000\u0000"+
-		"\u0000\u0002\u0016\u0001\u0000\u0000\u0000\u0004\u001c\u0001\u0000\u0000"+
-		"\u0000\u0006\u001f\u0001\u0000\u0000\u0000\b\'\u0001\u0000\u0000\u0000"+
-		"\n)\u0001\u0000\u0000\u0000\f,\u0001\u0000\u0000\u0000\u000e\u0015\u0003"+
-		"\u0002\u0001\u0000\u000f\u0015\u0003\u0004\u0002\u0000\u0010\u0015\u0003"+
-		"\u0006\u0003\u0000\u0011\u0015\u0003\b\u0004\u0000\u0012\u0015\u0003\n"+
-		"\u0005\u0000\u0013\u0015\u0003\f\u0006\u0000\u0014\u000e\u0001\u0000\u0000"+
-		"\u0000\u0014\u000f\u0001\u0000\u0000\u0000\u0014\u0010\u0001\u0000\u0000"+
-		"\u0000\u0014\u0011\u0001\u0000\u0000\u0000\u0014\u0012\u0001\u0000\u0000"+
-		"\u0000\u0014\u0013\u0001\u0000\u0000\u0000\u0015\u0001\u0001\u0000\u0000"+
-		"\u0000\u0016\u0017\u0005\u0001\u0000\u0000\u0017\u0018\u0005\u0002\u0000"+
-		"\u0000\u0018\u0019\u0005\f\u0000\u0000\u0019\u001a\u0005\u0003\u0000\u0000"+
-		"\u001a\u001b\u0005\r\u0000\u0000\u001b\u0003\u0001\u0000\u0000\u0000\u001c"+
-		"\u001d\u0005\u0004\u0000\u0000\u001d\u001e\u0005\u0005\u0000\u0000\u001e"+
-		"\u0005\u0001\u0000\u0000\u0000\u001f \u0005\u0006\u0000\u0000 !\u0005"+
-		"\u0002\u0000\u0000!\"\u0005\f\u0000\u0000\"#\u0005\u0007\u0000\u0000#"+
-		"$\u0005\b\u0000\u0000$%\u0005\t\u0000\u0000%&\u0005\r\u0000\u0000&\u0007"+
-		"\u0001\u0000\u0000\u0000\'(\u0005\n\u0000\u0000(\t\u0001\u0000\u0000\u0000"+
-		")*\u0005\u0004\u0000\u0000*+\u0005\u0002\u0000\u0000+\u000b\u0001\u0000"+
-		"\u0000\u0000,-\u0005\u0001\u0000\u0000-.\u0005\u0005\u0000\u0000./\u0005"+
-		"\u000b\u0000\u0000/0\u0005\f\u0000\u000001\u0005\u000e\u0000\u000016\u0005"+
-		"\f\u0000\u000023\u0005\u000f\u0000\u000035\u0005\f\u0000\u000042\u0001"+
-		"\u0000\u0000\u000058\u0001\u0000\u0000\u000064\u0001\u0000\u0000\u0000"+
-		"67\u0001\u0000\u0000\u00007\r\u0001\u0000\u0000\u000086\u0001\u0000\u0000"+
-		"\u0000\u0002\u00146";
+		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0001"+
+		"\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001"+
+		"\u0000\u0003\u0000\u0018\b\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001"+
+		"\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001"+
+		"\u0003\u0001\u0003\u0001\u0004\u0001\u0004\u0001\u0005\u0001\u0005\u0001"+
+		"\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001"+
+		"\u0006\u0001\u0006\u0001\u0006\u0005\u00068\b\u0006\n\u0006\f\u0006;\t"+
+		"\u0006\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001"+
+		"\u0007\u0000\u0000\b\u0000\u0002\u0004\u0006\b\n\f\u000e\u0000\u0000@"+
+		"\u0000\u0017\u0001\u0000\u0000\u0000\u0002\u0019\u0001\u0000\u0000\u0000"+
+		"\u0004\u001f\u0001\u0000\u0000\u0000\u0006\"\u0001\u0000\u0000\u0000\b"+
+		"*\u0001\u0000\u0000\u0000\n,\u0001\u0000\u0000\u0000\f/\u0001\u0000\u0000"+
+		"\u0000\u000e<\u0001\u0000\u0000\u0000\u0010\u0018\u0003\u0002\u0001\u0000"+
+		"\u0011\u0018\u0003\u0004\u0002\u0000\u0012\u0018\u0003\u0006\u0003\u0000"+
+		"\u0013\u0018\u0003\b\u0004\u0000\u0014\u0018\u0003\n\u0005\u0000\u0015"+
+		"\u0018\u0003\f\u0006\u0000\u0016\u0018\u0003\u000e\u0007\u0000\u0017\u0010"+
+		"\u0001\u0000\u0000\u0000\u0017\u0011\u0001\u0000\u0000\u0000\u0017\u0012"+
+		"\u0001\u0000\u0000\u0000\u0017\u0013\u0001\u0000\u0000\u0000\u0017\u0014"+
+		"\u0001\u0000\u0000\u0000\u0017\u0015\u0001\u0000\u0000\u0000\u0017\u0016"+
+		"\u0001\u0000\u0000\u0000\u0018\u0001\u0001\u0000\u0000\u0000\u0019\u001a"+
+		"\u0005\u0001\u0000\u0000\u001a\u001b\u0005\u0002\u0000\u0000\u001b\u001c"+
+		"\u0005\u000e\u0000\u0000\u001c\u001d\u0005\u0003\u0000\u0000\u001d\u001e"+
+		"\u0005\u000f\u0000\u0000\u001e\u0003\u0001\u0000\u0000\u0000\u001f \u0005"+
+		"\u0004\u0000\u0000 !\u0005\u0005\u0000\u0000!\u0005\u0001\u0000\u0000"+
+		"\u0000\"#\u0005\u0006\u0000\u0000#$\u0005\u0002\u0000\u0000$%\u0005\u000e"+
+		"\u0000\u0000%&\u0005\u0007\u0000\u0000&\'\u0005\b\u0000\u0000\'(\u0005"+
+		"\t\u0000\u0000()\u0005\u000f\u0000\u0000)\u0007\u0001\u0000\u0000\u0000"+
+		"*+\u0005\n\u0000\u0000+\t\u0001\u0000\u0000\u0000,-\u0005\u0004\u0000"+
+		"\u0000-.\u0005\u0002\u0000\u0000.\u000b\u0001\u0000\u0000\u0000/0\u0005"+
+		"\u0001\u0000\u000001\u0005\u0005\u0000\u000012\u0005\u000b\u0000\u0000"+
+		"23\u0005\u000e\u0000\u000034\u0005\f\u0000\u000049\u0005\u000e\u0000\u0000"+
+		"56\u0005\r\u0000\u000068\u0005\u000e\u0000\u000075\u0001\u0000\u0000\u0000"+
+		"8;\u0001\u0000\u0000\u000097\u0001\u0000\u0000\u00009:\u0001\u0000\u0000"+
+		"\u0000:\r\u0001\u0000\u0000\u0000;9\u0001\u0000\u0000\u0000<=\u0005\b"+
+		"\u0000\u0000=>\u0005\t\u0000\u0000>?\u0005\u0002\u0000\u0000?@\u0005\u000e"+
+		"\u0000\u0000@\u000f\u0001\u0000\u0000\u0000\u0002\u00179";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

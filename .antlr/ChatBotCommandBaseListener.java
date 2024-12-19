@@ -95,6 +95,18 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCreateTasks(ChatBotCommandParser.CreateTasksContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
