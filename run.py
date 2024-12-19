@@ -1,5 +1,6 @@
 import sys
 from antlr4 import *
+from datetime import datetime
 from generated.ChatBotCommandLexer import ChatBotCommandLexer
 from generated.ChatBotCommandParser import ChatBotCommandParser
 from generated.ChatBotCommandVisitor import ChatBotCommandVisitor
@@ -11,11 +12,11 @@ events = {}
 class ChatBotCommandInterpreter(ChatBotCommandVisitor):
     def visitCreateEvent(self, ctx):
         event_name = ctx.STRING().getText().strip('"')
-        datetime = ctx.DATETIME().getText()
+        datetime_str = ctx.DATETIME().getText()
         if event_name in events:
             return f"Event '{event_name}' already exists!"
-        events[event_name] = {'datetime': datetime, 'tasks': []}
-        return f"Created event: '{event_name}' at {datetime}"
+        events[event_name] = {'datetime': datetime_str, 'tasks': []}
+        return f"Created event: '{event_name}' at {datetime_str}"
 
     def visitShowTasks(self, ctx):
         tasks_output = []
@@ -26,11 +27,11 @@ class ChatBotCommandInterpreter(ChatBotCommandVisitor):
 
     def visitUpdateEvent(self, ctx):
         event_name = ctx.STRING().getText().strip('"')
-        datetime = ctx.DATETIME().getText()
+        datetime_str = ctx.DATETIME().getText()
         if event_name not in events:
             return f"Event '{event_name}' does not exist!"
-        events[event_name]['datetime'] = datetime
-        return f"Updated event: '{event_name}' to new time {datetime}"
+        events[event_name]['datetime'] = datetime_str
+        return f"Updated event: '{event_name}' to new time {datetime_str}"
 
     def visitHelpCommand(self, ctx):
         print("""
@@ -52,10 +53,14 @@ Available commands:
    Syntax: create tasks for "<event_name>": "<task1>", "<task2>", ...
    Example: create tasks for "Team Meeting": "Prepare slides", "Send invites"
 
-6. Help:
+6. Time to an event:
+   Syntax: time to event "<event_name>"
+   Example: time to event "Team Meeting"
+
+7. Help:
    Syntax: help
 
-7. Exit:
+8. Exit:
    Syntax: exit or quit
         """)
         return None
@@ -72,6 +77,21 @@ Available commands:
         tasks = [ctx.STRING(i).getText().strip('"') for i in range(1, len(ctx.STRING()))]
         events[event_name]['tasks'].extend(tasks)
         return f"Added tasks to event '{event_name}': {', '.join(tasks)}"
+
+    def visitTimeToEvent(self, ctx):
+        event_name = ctx.STRING().getText().strip('"')
+        if event_name not in events:
+            return f"Event '{event_name}' does not exist!"
+        event_datetime_str = events[event_name]['datetime']
+        event_datetime = datetime.strptime(event_datetime_str, "%Y-%m-%d %H:%M")
+        current_datetime = datetime.now()
+        time_difference = event_datetime - current_datetime
+        if time_difference.total_seconds() < 0:
+            return f"Event '{event_name}' has already occurred."
+        days, seconds = divmod(time_difference.total_seconds(), 86400)
+        hours, seconds = divmod(seconds, 3600)
+        minutes = seconds // 60
+        return f"Time to '{event_name}': {int(days)} days, {int(hours)} hours, {int(minutes)} minutes."
 
 # Main function
 def main():

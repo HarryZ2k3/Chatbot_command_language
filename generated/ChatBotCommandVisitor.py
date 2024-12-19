@@ -44,5 +44,10 @@ class ChatBotCommandVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by ChatBotCommandParser#timeToEvent.
+    def visitTimeToEvent(self, ctx:ChatBotCommandParser.TimeToEventContext):
+        return self.visitChildren(ctx)
+
+
 
 del ChatBotCommandParser
