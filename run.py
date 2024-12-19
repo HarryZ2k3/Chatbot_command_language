@@ -1,12 +1,32 @@
 import sys
 from antlr4 import *
 from datetime import datetime
+from rapidfuzz import process
 from generated.ChatBotCommandLexer import ChatBotCommandLexer
 from generated.ChatBotCommandParser import ChatBotCommandParser
 from generated.ChatBotCommandVisitor import ChatBotCommandVisitor
 
 # Global storage for events and tasks
 events = {}
+
+# List of valid commands for fuzzy matching
+COMMANDS = [
+    "create event",
+    "show tasks",
+    "update event",
+    "help",
+    "show event",
+    "create tasks",
+    "time to event",
+    "exit"
+]
+
+# Function to match user input with the closest command
+def match_command(user_input):
+    best_match = process.extractOne(user_input, COMMANDS, score_cutoff=70)
+    if best_match:
+        return best_match[0]  # Return the closest command
+    return None
 
 # Visitor implementation
 class ChatBotCommandInterpreter(ChatBotCommandVisitor):
@@ -105,8 +125,14 @@ def main():
                 print("Exiting chatbot.")
                 break
 
-            # ANTLR processing
-            input_stream = InputStream(user_input)
+            # Fuzzy match the command
+            matched_command = match_command(user_input)
+            if matched_command is None:
+                print("Invalid command! Type 'help' to see the list of available commands.")
+                continue
+
+            print(f"Interpreted command: {matched_command}")
+            input_stream = InputStream(matched_command)
             lexer = ChatBotCommandLexer(input_stream)
             token_stream = CommonTokenStream(lexer)
             parser = ChatBotCommandParser(token_stream)
@@ -121,7 +147,7 @@ def main():
                 print(result)
 
         except Exception as e:
-            print("Invalid command! Type 'help' to see the list of available commands.")
+            print("Error occurred! Type 'help' to see the list of available commands.")
 
 if __name__ == "__main__":
     main()
