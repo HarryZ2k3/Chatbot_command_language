@@ -23,7 +23,9 @@ COMMANDS = [
 
 # Function to match user input with the closest command
 def match_command(user_input):
-    best_match = process.extractOne(user_input, COMMANDS, score_cutoff=70)
+    # Match the initial part of the command to predefined commands
+    possible_command = " ".join(user_input.split()[:2])  # Match the first 2 words
+    best_match = process.extractOne(possible_command, COMMANDS, score_cutoff=70)
     if best_match:
         return best_match[0]  # Return the closest command
     return None
@@ -132,7 +134,7 @@ def main():
                 continue
 
             print(f"Interpreted command: {matched_command}")
-            input_stream = InputStream(matched_command)
+            input_stream = InputStream(user_input)  # FIX! Passing input in here
             lexer = ChatBotCommandLexer(input_stream)
             token_stream = CommonTokenStream(lexer)
             parser = ChatBotCommandParser(token_stream)
@@ -147,7 +149,7 @@ def main():
                 print(result)
 
         except Exception as e:
-            print("Error occurred! Type 'help' to see the list of available commands.")
+            print(f"Error occurred! Type 'help' to see the list of available commands.\n{str(e)}")
 
 if __name__ == "__main__":
     main()
