@@ -58,32 +58,32 @@ class ChatBotCommandInterpreter(ChatBotCommandVisitor):
         return """
 Available commands:
 1. Create an event:
-Syntax: create event "<event_name>" at <YYYY-MM-DD HH:MM>
-Example: create event "Team Meeting" at 2024-11-20 10:00
+   Syntax: create event "<event_name>" at <YYYY-MM-DD HH:MM>
+   Example: create event "Team Meeting" at 2024-11-20 10:00
 
 2. Show all events:
-Syntax: show event
+   Syntax: show event
 
 3. Show all tasks:
-Syntax: show tasks
+   Syntax: show tasks
 
 4. Update an event:
-Syntax: update event "<event_name>" change time to <YYYY-MM-DD HH:MM>
+   Syntax: update event "<event_name>" change time to <YYYY-MM-DD HH:MM>
 
 5. Create tasks for an event:
-Syntax: create tasks for "<event_name>": "<task1>", "<task2>", ...
-Example: create tasks for "Team Meeting": "Prepare slides", "Send invites"
+   Syntax: create tasks for "<event_name>": "<task1>", "<task2>", ...
+   Example: create tasks for "Team Meeting": "Prepare slides", "Send invites"
 
 6. Time to an event:
-Syntax: time to event "<event_name>"
-Example: time to event "Team Meeting"
+   Syntax: time to event "<event_name>"
+   Example: time to event "Team Meeting"
 
 7. Help:
-Syntax: help
+   Syntax: help
 
 8. Exit:
-Syntax: exit or quit
-    """
+   Syntax: exit or quit
+        """
 
     def visitShowEvent(self, ctx):
         if not events:
