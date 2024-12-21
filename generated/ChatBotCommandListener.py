@@ -71,5 +71,14 @@ class ChatBotCommandListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ChatBotCommandParser#timeToEvent.
+    def enterTimeToEvent(self, ctx:ChatBotCommandParser.TimeToEventContext):
+        pass
+
+    # Exit a parse tree produced by ChatBotCommandParser#timeToEvent.
+    def exitTimeToEvent(self, ctx:ChatBotCommandParser.TimeToEventContext):
+        pass
+
+
 
 del ChatBotCommandParser

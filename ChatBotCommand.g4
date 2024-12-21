@@ -8,6 +8,7 @@ command
     | helpCommand
     | showEvent
     | createTasks
+    | timeToEvent
     ;
 
 // Rules for specific commands
@@ -35,6 +36,10 @@ createTasks
     : 'create' 'tasks' 'for' STRING ':' STRING (',' STRING)*
     ;
 
+timeToEvent
+    : 'time' 'to' 'event' STRING
+    ;
+
 // Tokens
 STRING
     : '"' ~["]* '"'
@@ -42,14 +47,6 @@ STRING
 
 DATETIME
     : DIGIT DIGIT DIGIT DIGIT '-' DIGIT DIGIT '-' DIGIT DIGIT ' ' DIGIT DIGIT ':' DIGIT DIGIT
-    ;
-
-COLON
-    : ':'
-    ;
-
-COMMA
-    : ','
     ;
 
 fragment DIGIT

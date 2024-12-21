@@ -1,107 +1,109 @@
-import sys
-from antlr4 import *
-from generated.ChatBotCommandLexer import ChatBotCommandLexer
-from generated.ChatBotCommandParser import ChatBotCommandParser
-from generated.ChatBotCommandVisitor import ChatBotCommandVisitor
+import tkinter as tk
+from tkinter import ttk
+from PIL import Image, ImageTk
+from event_manager import handle_input  
 
-# Global storage for events and tasks
-events = {}
 
-# Visitor implementation
-class ChatBotCommandInterpreter(ChatBotCommandVisitor):
-    def visitCreateEvent(self, ctx):
-        event_name = ctx.STRING().getText().strip('"')
-        datetime = ctx.DATETIME().getText()
-        if event_name in events:
-            return f"Event '{event_name}' already exists!"
-        events[event_name] = {'datetime': datetime, 'tasks': []}
-        return f"Created event: '{event_name}' at {datetime}"
+class ChatApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Chat App")
+        self.root.geometry("600x700")
+        self.root.resizable(True, True)  
 
-    def visitShowTasks(self, ctx):
-        tasks_output = []
-        for event, data in events.items():
-            if data['tasks']:
-                tasks_output.append(f"{event}: {', '.join(data['tasks'])}")
-        return "Tasks for events:\n" + "\n".join(tasks_output) if tasks_output else "No tasks found."
+        # Default Theme
+        self.bg_color = "#f0f0f0"
+        self.text_color = "#000000"
 
-    def visitUpdateEvent(self, ctx):
-        event_name = ctx.STRING().getText().strip('"')
-        datetime = ctx.DATETIME().getText()
-        if event_name not in events:
-            return f"Event '{event_name}' does not exist!"
-        events[event_name]['datetime'] = datetime
-        return f"Updated event: '{event_name}' to new time {datetime}"
+        # Configure grid layout
+        self.root.columnconfigure(0, weight=1)
+        self.root.rowconfigure(0, weight=1)
 
-    def visitHelpCommand(self, ctx):
-        print("""
-Available commands:
-1. Create an event:
-   Syntax: create event "<event_name>" at <YYYY-MM-DD HH:MM>
-   Example: create event "Team Meeting" at 2024-11-20 10:00
+        # Setting up the main frame
+        self.main_frame = ttk.Frame(root, padding=10)
+        self.main_frame.grid(row=0, column=0, sticky="nsew")
+        self.main_frame.columnconfigure(0, weight=1)
+        self.main_frame.rowconfigure(0, weight=1)
 
-2. Show all events:
-   Syntax: show event
+        # Scrollable chat display
+        self.chat_display = tk.Text(
+            self.main_frame,
+            wrap=tk.WORD,
+            state="disabled",
+            bg=self.bg_color,
+            fg=self.text_color,
+            font=("Arial", 12),
+        )
+        self.chat_display.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=5, pady=5)
 
-3. Show all tasks:
-   Syntax: show tasks
+        # Inout field and send button
+        self.input_frame = ttk.Frame(self.main_frame)
+        self.input_frame.grid(row=1, column=0, columnspan=2, sticky="ew", pady=10)
+        self.input_frame.columnconfigure(0, weight=1)
 
-4. Update an event:
-   Syntax: update event "<event_name>" change time to <YYYY-MM-DD HH:MM>
+        self.input_field = ttk.Entry(self.input_frame, font=("Arial", 12))
+        self.input_field.grid(row=0, column=0, sticky="ew", padx=5)
 
-5. Create tasks for an event:
-   Syntax: create tasks for "<event_name>": "<task1>", "<task2>", ...
-   Example: create tasks for "Team Meeting": "Prepare slides", "Send invites"
+        self.send_button = ttk.Button(self.input_frame, text="Send", command=self.handle_message)
+        self.send_button.grid(row=0, column=1, padx=5)
 
-6. Help:
-   Syntax: help
+        # Event binding for "Enter" key
+        self.input_field.bind("<Return>", lambda event: self.handle_message())
 
-7. Exit:
-   Syntax: exit or quit
-        """)
-        return None
+    def display_message(self, text, sender="user"):
+        """Display a message in the chat window."""
+        self.chat_display.config(state="normal")
 
-    def visitShowEvent(self, ctx):
-        if not events:
-            return "No events found."
-        return "\n".join([f"{name}: {data['datetime']}" for name, data in events.items()])
+        # Create chat bubble
+        bubble_frame = ttk.Frame(self.chat_display, padding=10)
+        bubble_frame.pack(anchor=tk.E, pady=5)
 
-    def visitCreateTasks(self, ctx):
-        event_name = ctx.STRING(0).getText().strip('"')
-        if event_name not in events:
-            return f"Event '{event_name}' does not exist!"
-        tasks = [ctx.STRING(i).getText().strip('"') for i in range(1, len(ctx.STRING()))]
-        events[event_name]['tasks'].extend(tasks)
-        return f"Added tasks to event '{event_name}': {', '.join(tasks)}"
+        # Add image
+        if sender == "user":
+            image_path = "images/user.jpg"
+        else:
+            image_path = "images/chatbot.jpg"
 
-# Main function
-def main():
-    while True:
-        try:
-            # Input command from user
-            user_input = input("Enter command: ")
+        img = Image.open(image_path)
+        img = img.resize((40, 40), Image.LANCZOS)  
+        photo = ImageTk.PhotoImage(img)
 
-            # Exit condition
-            if user_input.lower() in {"exit", "quit"}:
-                print("Exiting chatbot.")
-                break
+        avatar_label = ttk.Label(bubble_frame, image=photo)
+        avatar_label.image = photo  
+        avatar_label.pack(side=tk.LEFT, padx=5)
 
-            # ANTLR processing
-            input_stream = InputStream(user_input)
-            lexer = ChatBotCommandLexer(input_stream)
-            token_stream = CommonTokenStream(lexer)
-            parser = ChatBotCommandParser(token_stream)
+        # Add text bubble
+        text_label = tk.Label(
+            bubble_frame,
+            text=text,
+            wraplength=400,
+            justify=tk.LEFT,
+            bg="#d0e6f6",
+            fg="#000000",
+            font=("Arial", 12),
+            padx=10,
+            pady=5,
+            relief=tk.RAISED,
+        )
+        text_label.pack(side=tk.LEFT if sender == "bot" else tk.RIGHT)
 
-            # Parse the command and visit the tree
-            tree = parser.command()
-            visitor = ChatBotCommandInterpreter()
-            result = visitor.visit(tree)
+        # Insert chat bubble in the chat display
+        self.chat_display.window_create(tk.END, window=bubble_frame)
+        self.chat_display.insert(tk.END, "\n")
+        self.chat_display.config(state="disabled")
+        self.chat_display.see(tk.END)
 
-            # Only print the result if it's not None
-            if result is not None:
-                print(result)
+    def handle_message(self):
+        """Handle user input and generate bot response."""
+        user_message = self.input_field.get().strip()
+        if user_message:
+            self.input_field.delete(0, tk.END)
+            self.display_message(user_message, sender="user")  # Display user message
+            bot_response = handle_input(user_message)  # Get bot response
+            self.root.after(500, lambda: self.display_message(bot_response, sender="bot"))
 
-        except Exception as e:
-            print("Invalid command! Type 'help' to see the list of available commands.")
 
 if __name__ == "__main__":
-    main()
+    root = tk.Tk()
+    app = ChatApp(root)
+    root.mainloop()

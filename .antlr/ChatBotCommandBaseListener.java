@@ -28,37 +28,37 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCreateEventCommand(ChatBotCommandParser.CreateEventCommandContext ctx) { }
+	@Override public void enterCreateEvent(ChatBotCommandParser.CreateEventContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCreateEventCommand(ChatBotCommandParser.CreateEventCommandContext ctx) { }
+	@Override public void exitCreateEvent(ChatBotCommandParser.CreateEventContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterShowTasksCommand(ChatBotCommandParser.ShowTasksCommandContext ctx) { }
+	@Override public void enterShowTasks(ChatBotCommandParser.ShowTasksContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitShowTasksCommand(ChatBotCommandParser.ShowTasksCommandContext ctx) { }
+	@Override public void exitShowTasks(ChatBotCommandParser.ShowTasksContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUpdateEventCommand(ChatBotCommandParser.UpdateEventCommandContext ctx) { }
+	@Override public void enterUpdateEvent(ChatBotCommandParser.UpdateEventContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUpdateEventCommand(ChatBotCommandParser.UpdateEventCommandContext ctx) { }
+	@Override public void exitUpdateEvent(ChatBotCommandParser.UpdateEventContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -71,6 +71,42 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitHelpCommand(ChatBotCommandParser.HelpCommandContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterShowEvent(ChatBotCommandParser.ShowEventContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitShowEvent(ChatBotCommandParser.ShowEventContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCreateTasks(ChatBotCommandParser.CreateTasksContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCreateTasks(ChatBotCommandParser.CreateTasksContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
