@@ -113,21 +113,36 @@ Available commands:
         minutes = seconds // 60
         return f"Time to '{event_name}': {int(days)} days, {int(hours)} hours, {int(minutes)} minutes."
 
-# Function to handle input and output
 def handle_input(user_input):
-    matched_command = match_command(user_input)
-    
-    if matched_command:
-        input_stream = InputStream(user_input)  # FIX! Passing input in here
+    try:
+        # Check for exit condition
+        if user_input.lower() in {"exit", "quit"}:
+            return "Exiting chatbot."
+        
+        # Fuzzy match the command
+        matched_command = match_command(user_input)
+        if matched_command is None:
+            return "Invalid command! Type 'help' to see the list of available commands."
+        
+        if not user_input.strip():
+            return "Command is empty. Please enter a valid one\n Try help!"
+        
+        # If command matched, parse and interpret it
+        input_stream = InputStream(user_input)  # Passing input in here
         lexer = ChatBotCommandLexer(input_stream)
         token_stream = CommonTokenStream(lexer)
         parser = ChatBotCommandParser(token_stream)
 
         # Parse the command and visit the tree
         tree = parser.command()
+
+        if not tree:
+            return f"Did you mean: {matched_command} ? \n Type 'help' for list of commands"
+        
         visitor = ChatBotCommandInterpreter()
         result = visitor.visit(tree)
 
-        return result if result else "Command not recognized. Type 'help' for assistance."
-    else:
-        return "Command not recognized. Type 'help' for assistance."
+        # Return the result or a default message if result is None
+        return result if result else f"Did you mean: {matched_command} ? \n Type 'help' for list of commands"
+    except Exception as e:
+        return f"If you want to {matched_command}, try the full syntax !\n Type 'help' to learn more!"
