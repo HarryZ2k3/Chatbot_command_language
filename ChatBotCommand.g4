@@ -9,7 +9,9 @@ command:
 	| showEvent
 	| createTasks
 	| timeToEvent
-	| partialCreateCommand; // Added for partial input detection
+	| partialCreateCommand
+	| greetingCommand; //For greeting the bot
+
 
 // Rules for specific commands
 createEvent: 'create' 'event' STRING 'at' DATETIME;
@@ -28,12 +30,17 @@ createTasks:
 
 timeToEvent: 'time' 'to' 'event' STRING;
 
+greetingCommand
+    : ('hi' | 'hello' | 'hey') (',' STRING)? #Greeting
+    ;
+
 // Grammar for partial matching
 partialCreateCommand:
 	partialCreate afterCreate?
 	| (partialShow afterCreate)?
 	| (partialUpdate afterCreate)?
-	| (partialTimeTo afterCreate)?;
+	| (partialTimeTo afterCreate)?
+	| (partialGreeting afterCreate)?;
 
 partialTimeTo: 't' ('i'? 'm'? 'e'?) 'to'? | 'time' 'to';
 
@@ -50,6 +57,9 @@ afterCreate: partialTask | partialEvent;
 
 partialEvent: 'e' | 'ev' | 'eve' | 'even' | 'event';
 partialTask: 't' | 'ta' | 'tas' | 'task' | 'tasks';
+
+// Partial matching for "hi,hello,hey"
+partialGreeting: 'h' | 'he' | 'hel' | 'hell' | 'hello' | 'hi' | 'hey';
 
 // Tokens
 STRING: '"' ~["]* '"';

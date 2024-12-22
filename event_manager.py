@@ -17,7 +17,11 @@ COMMANDS = [
     "show event",
     "create tasks",
     "time to event",
-    "exit"
+    "hi",
+    "hello",
+    "hey",
+    "exit",
+    
 ]
 
 # Function to match user input with the closest command 
@@ -31,6 +35,9 @@ def match_command(user_input):
 
 # Visitor implementation
 class ChatBotCommandInterpreter(ChatBotCommandVisitor):
+    def visitGreeting(self, ctx):
+        """Respond to greetings."""
+        return "Hello! How can I assist you today?"
     def visitCreateEvent(self, ctx):
         event_name = ctx.STRING().getText().strip('"')
         datetime_str = ctx.DATETIME().getText()
@@ -251,7 +258,9 @@ def handle_input(user_input):
         # Fuzzy match the command
         matched_command = match_command(user_input)
         if matched_command is None:
-            return "Invalid command! Type 'help' to see the list of available commands."
+            return "I'm sorry, I didn't understand that. Type 'help' for a list of commands."
+        if matched_command in ["hi", "hello", "hey"]:
+            return "Hello! How can I assist you today?"
 
         if not user_input.strip():
             return "Command is empty. Please enter a valid one\n Try help!"
