@@ -1,4 +1,4 @@
-# Generated from c:/Users/trieu/Downloads/Chatbot_command_language-main/Chatbot_command_language-main/ChatBotCommand.g4 by ANTLR 4.13.2
+# Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,71 +10,78 @@ else:
 
 def serializedATN():
     return [
-        4,1,36,180,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,42,197,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
-        2,14,7,14,2,15,7,15,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,41,8,0,1,
-        1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,
-        3,1,4,1,4,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,5,6,73,8,6,
-        10,6,12,6,76,9,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,3,8,85,8,8,1,8,1,8,
-        1,8,3,8,90,8,8,1,8,1,8,1,8,3,8,95,8,8,1,8,1,8,1,8,3,8,100,8,8,3,
-        8,102,8,8,1,9,1,9,3,9,106,8,9,1,9,3,9,109,8,9,1,9,3,9,112,8,9,1,
-        9,3,9,115,8,9,1,9,1,9,3,9,119,8,9,1,10,1,10,3,10,123,8,10,1,10,3,
-        10,126,8,10,1,10,3,10,129,8,10,1,10,3,10,132,8,10,1,10,3,10,135,
-        8,10,1,10,3,10,138,8,10,1,11,1,11,3,11,142,8,11,1,11,3,11,145,8,
-        11,1,11,3,11,148,8,11,1,11,3,11,151,8,11,1,12,1,12,3,12,155,8,12,
-        1,12,3,12,158,8,12,1,12,3,12,161,8,12,1,12,3,12,164,8,12,1,12,3,
-        12,167,8,12,1,12,3,12,170,8,12,1,13,1,13,3,13,174,8,13,1,14,1,14,
-        1,15,1,15,1,15,0,0,16,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,
-        0,2,3,0,2,2,17,17,28,30,3,0,5,5,14,14,31,33,200,0,40,1,0,0,0,2,42,
-        1,0,0,0,4,48,1,0,0,0,6,51,1,0,0,0,8,59,1,0,0,0,10,61,1,0,0,0,12,
-        64,1,0,0,0,14,77,1,0,0,0,16,101,1,0,0,0,18,118,1,0,0,0,20,137,1,
-        0,0,0,22,150,1,0,0,0,24,169,1,0,0,0,26,173,1,0,0,0,28,175,1,0,0,
-        0,30,177,1,0,0,0,32,41,3,2,1,0,33,41,3,4,2,0,34,41,3,6,3,0,35,41,
-        3,8,4,0,36,41,3,10,5,0,37,41,3,12,6,0,38,41,3,14,7,0,39,41,3,16,
-        8,0,40,32,1,0,0,0,40,33,1,0,0,0,40,34,1,0,0,0,40,35,1,0,0,0,40,36,
-        1,0,0,0,40,37,1,0,0,0,40,38,1,0,0,0,40,39,1,0,0,0,41,1,1,0,0,0,42,
-        43,5,1,0,0,43,44,5,2,0,0,44,45,5,34,0,0,45,46,5,3,0,0,46,47,5,35,
-        0,0,47,3,1,0,0,0,48,49,5,4,0,0,49,50,5,5,0,0,50,5,1,0,0,0,51,52,
-        5,6,0,0,52,53,5,2,0,0,53,54,5,34,0,0,54,55,5,7,0,0,55,56,5,8,0,0,
-        56,57,5,9,0,0,57,58,5,35,0,0,58,7,1,0,0,0,59,60,5,10,0,0,60,9,1,
-        0,0,0,61,62,5,4,0,0,62,63,5,2,0,0,63,11,1,0,0,0,64,65,5,1,0,0,65,
-        66,5,5,0,0,66,67,5,11,0,0,67,68,5,34,0,0,68,69,5,12,0,0,69,74,5,
-        34,0,0,70,71,5,13,0,0,71,73,5,34,0,0,72,70,1,0,0,0,73,76,1,0,0,0,
-        74,72,1,0,0,0,74,75,1,0,0,0,75,13,1,0,0,0,76,74,1,0,0,0,77,78,5,
-        8,0,0,78,79,5,9,0,0,79,80,5,2,0,0,80,81,5,34,0,0,81,15,1,0,0,0,82,
-        84,3,24,12,0,83,85,3,26,13,0,84,83,1,0,0,0,84,85,1,0,0,0,85,102,
-        1,0,0,0,86,87,3,22,11,0,87,88,3,26,13,0,88,90,1,0,0,0,89,86,1,0,
-        0,0,89,90,1,0,0,0,90,102,1,0,0,0,91,92,3,20,10,0,92,93,3,26,13,0,
-        93,95,1,0,0,0,94,91,1,0,0,0,94,95,1,0,0,0,95,102,1,0,0,0,96,97,3,
-        18,9,0,97,98,3,26,13,0,98,100,1,0,0,0,99,96,1,0,0,0,99,100,1,0,0,
-        0,100,102,1,0,0,0,101,82,1,0,0,0,101,89,1,0,0,0,101,94,1,0,0,0,101,
-        99,1,0,0,0,102,17,1,0,0,0,103,105,5,14,0,0,104,106,5,15,0,0,105,
-        104,1,0,0,0,105,106,1,0,0,0,106,108,1,0,0,0,107,109,5,16,0,0,108,
-        107,1,0,0,0,108,109,1,0,0,0,109,111,1,0,0,0,110,112,5,17,0,0,111,
-        110,1,0,0,0,111,112,1,0,0,0,112,114,1,0,0,0,113,115,5,9,0,0,114,
-        113,1,0,0,0,114,115,1,0,0,0,115,119,1,0,0,0,116,117,5,8,0,0,117,
-        119,5,9,0,0,118,103,1,0,0,0,118,116,1,0,0,0,119,19,1,0,0,0,120,122,
-        5,18,0,0,121,123,5,19,0,0,122,121,1,0,0,0,122,123,1,0,0,0,123,125,
-        1,0,0,0,124,126,5,20,0,0,125,124,1,0,0,0,125,126,1,0,0,0,126,128,
-        1,0,0,0,127,129,5,21,0,0,128,127,1,0,0,0,128,129,1,0,0,0,129,131,
-        1,0,0,0,130,132,5,14,0,0,131,130,1,0,0,0,131,132,1,0,0,0,132,134,
-        1,0,0,0,133,135,5,17,0,0,134,133,1,0,0,0,134,135,1,0,0,0,135,138,
-        1,0,0,0,136,138,5,6,0,0,137,120,1,0,0,0,137,136,1,0,0,0,138,21,1,
-        0,0,0,139,141,5,22,0,0,140,142,5,23,0,0,141,140,1,0,0,0,141,142,
-        1,0,0,0,142,144,1,0,0,0,143,145,5,24,0,0,144,143,1,0,0,0,144,145,
-        1,0,0,0,145,147,1,0,0,0,146,148,5,25,0,0,147,146,1,0,0,0,147,148,
-        1,0,0,0,148,151,1,0,0,0,149,151,5,4,0,0,150,139,1,0,0,0,150,149,
-        1,0,0,0,151,23,1,0,0,0,152,154,5,26,0,0,153,155,5,27,0,0,154,153,
-        1,0,0,0,154,155,1,0,0,0,155,157,1,0,0,0,156,158,5,17,0,0,157,156,
-        1,0,0,0,157,158,1,0,0,0,158,160,1,0,0,0,159,161,5,21,0,0,160,159,
-        1,0,0,0,160,161,1,0,0,0,161,163,1,0,0,0,162,164,5,14,0,0,163,162,
-        1,0,0,0,163,164,1,0,0,0,164,166,1,0,0,0,165,167,5,17,0,0,166,165,
-        1,0,0,0,166,167,1,0,0,0,167,170,1,0,0,0,168,170,5,1,0,0,169,152,
-        1,0,0,0,169,168,1,0,0,0,170,25,1,0,0,0,171,174,3,30,15,0,172,174,
-        3,28,14,0,173,171,1,0,0,0,173,172,1,0,0,0,174,27,1,0,0,0,175,176,
-        7,0,0,0,176,29,1,0,0,0,177,178,7,1,0,0,178,31,1,0,0,0,29,40,74,84,
-        89,94,99,101,105,108,111,114,118,122,125,128,131,134,137,141,144,
-        147,150,154,157,160,163,166,169,173
+        2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,1,0,1,0,1,0,1,0,1,0,1,0,
+        1,0,1,0,1,0,3,0,46,8,0,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,3,1,
+        3,1,3,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,
+        6,1,6,1,6,1,6,5,6,78,8,6,10,6,12,6,81,9,6,1,7,1,7,1,7,1,7,1,7,1,
+        8,1,8,1,8,3,8,91,8,8,1,9,1,9,3,9,95,8,9,1,9,1,9,1,9,3,9,100,8,9,
+        1,9,1,9,1,9,3,9,105,8,9,1,9,1,9,1,9,3,9,110,8,9,1,9,1,9,1,9,3,9,
+        115,8,9,3,9,117,8,9,1,10,1,10,3,10,121,8,10,1,10,3,10,124,8,10,1,
+        10,3,10,127,8,10,1,10,3,10,130,8,10,1,10,1,10,3,10,134,8,10,1,11,
+        1,11,3,11,138,8,11,1,11,3,11,141,8,11,1,11,3,11,144,8,11,1,11,3,
+        11,147,8,11,1,11,3,11,150,8,11,1,11,3,11,153,8,11,1,12,1,12,3,12,
+        157,8,12,1,12,3,12,160,8,12,1,12,3,12,163,8,12,1,12,3,12,166,8,12,
+        1,13,1,13,3,13,170,8,13,1,13,3,13,173,8,13,1,13,3,13,176,8,13,1,
+        13,3,13,179,8,13,1,13,3,13,182,8,13,1,13,3,13,185,8,13,1,14,1,14,
+        3,14,189,8,14,1,15,1,15,1,16,1,16,1,17,1,17,1,17,0,0,18,0,2,4,6,
+        8,10,12,14,16,18,20,22,24,26,28,30,32,34,0,4,1,0,14,16,3,0,2,2,20,
+        20,31,33,3,0,5,5,17,17,34,36,3,0,14,16,26,26,37,39,219,0,45,1,0,
+        0,0,2,47,1,0,0,0,4,53,1,0,0,0,6,56,1,0,0,0,8,64,1,0,0,0,10,66,1,
+        0,0,0,12,69,1,0,0,0,14,82,1,0,0,0,16,87,1,0,0,0,18,116,1,0,0,0,20,
+        133,1,0,0,0,22,152,1,0,0,0,24,165,1,0,0,0,26,184,1,0,0,0,28,188,
+        1,0,0,0,30,190,1,0,0,0,32,192,1,0,0,0,34,194,1,0,0,0,36,46,3,2,1,
+        0,37,46,3,4,2,0,38,46,3,6,3,0,39,46,3,8,4,0,40,46,3,10,5,0,41,46,
+        3,12,6,0,42,46,3,14,7,0,43,46,3,18,9,0,44,46,3,16,8,0,45,36,1,0,
+        0,0,45,37,1,0,0,0,45,38,1,0,0,0,45,39,1,0,0,0,45,40,1,0,0,0,45,41,
+        1,0,0,0,45,42,1,0,0,0,45,43,1,0,0,0,45,44,1,0,0,0,46,1,1,0,0,0,47,
+        48,5,1,0,0,48,49,5,2,0,0,49,50,5,40,0,0,50,51,5,3,0,0,51,52,5,41,
+        0,0,52,3,1,0,0,0,53,54,5,4,0,0,54,55,5,5,0,0,55,5,1,0,0,0,56,57,
+        5,6,0,0,57,58,5,2,0,0,58,59,5,40,0,0,59,60,5,7,0,0,60,61,5,8,0,0,
+        61,62,5,9,0,0,62,63,5,41,0,0,63,7,1,0,0,0,64,65,5,10,0,0,65,9,1,
+        0,0,0,66,67,5,4,0,0,67,68,5,2,0,0,68,11,1,0,0,0,69,70,5,1,0,0,70,
+        71,5,5,0,0,71,72,5,11,0,0,72,73,5,40,0,0,73,74,5,12,0,0,74,79,5,
+        40,0,0,75,76,5,13,0,0,76,78,5,40,0,0,77,75,1,0,0,0,78,81,1,0,0,0,
+        79,77,1,0,0,0,79,80,1,0,0,0,80,13,1,0,0,0,81,79,1,0,0,0,82,83,5,
+        8,0,0,83,84,5,9,0,0,84,85,5,2,0,0,85,86,5,40,0,0,86,15,1,0,0,0,87,
+        90,7,0,0,0,88,89,5,13,0,0,89,91,5,40,0,0,90,88,1,0,0,0,90,91,1,0,
+        0,0,91,17,1,0,0,0,92,94,3,26,13,0,93,95,3,28,14,0,94,93,1,0,0,0,
+        94,95,1,0,0,0,95,117,1,0,0,0,96,97,3,24,12,0,97,98,3,28,14,0,98,
+        100,1,0,0,0,99,96,1,0,0,0,99,100,1,0,0,0,100,117,1,0,0,0,101,102,
+        3,22,11,0,102,103,3,28,14,0,103,105,1,0,0,0,104,101,1,0,0,0,104,
+        105,1,0,0,0,105,117,1,0,0,0,106,107,3,20,10,0,107,108,3,28,14,0,
+        108,110,1,0,0,0,109,106,1,0,0,0,109,110,1,0,0,0,110,117,1,0,0,0,
+        111,112,3,34,17,0,112,113,3,28,14,0,113,115,1,0,0,0,114,111,1,0,
+        0,0,114,115,1,0,0,0,115,117,1,0,0,0,116,92,1,0,0,0,116,99,1,0,0,
+        0,116,104,1,0,0,0,116,109,1,0,0,0,116,114,1,0,0,0,117,19,1,0,0,0,
+        118,120,5,17,0,0,119,121,5,18,0,0,120,119,1,0,0,0,120,121,1,0,0,
+        0,121,123,1,0,0,0,122,124,5,19,0,0,123,122,1,0,0,0,123,124,1,0,0,
+        0,124,126,1,0,0,0,125,127,5,20,0,0,126,125,1,0,0,0,126,127,1,0,0,
+        0,127,129,1,0,0,0,128,130,5,9,0,0,129,128,1,0,0,0,129,130,1,0,0,
+        0,130,134,1,0,0,0,131,132,5,8,0,0,132,134,5,9,0,0,133,118,1,0,0,
+        0,133,131,1,0,0,0,134,21,1,0,0,0,135,137,5,21,0,0,136,138,5,22,0,
+        0,137,136,1,0,0,0,137,138,1,0,0,0,138,140,1,0,0,0,139,141,5,23,0,
+        0,140,139,1,0,0,0,140,141,1,0,0,0,141,143,1,0,0,0,142,144,5,24,0,
+        0,143,142,1,0,0,0,143,144,1,0,0,0,144,146,1,0,0,0,145,147,5,17,0,
+        0,146,145,1,0,0,0,146,147,1,0,0,0,147,149,1,0,0,0,148,150,5,20,0,
+        0,149,148,1,0,0,0,149,150,1,0,0,0,150,153,1,0,0,0,151,153,5,6,0,
+        0,152,135,1,0,0,0,152,151,1,0,0,0,153,23,1,0,0,0,154,156,5,25,0,
+        0,155,157,5,26,0,0,156,155,1,0,0,0,156,157,1,0,0,0,157,159,1,0,0,
+        0,158,160,5,27,0,0,159,158,1,0,0,0,159,160,1,0,0,0,160,162,1,0,0,
+        0,161,163,5,28,0,0,162,161,1,0,0,0,162,163,1,0,0,0,163,166,1,0,0,
+        0,164,166,5,4,0,0,165,154,1,0,0,0,165,164,1,0,0,0,166,25,1,0,0,0,
+        167,169,5,29,0,0,168,170,5,30,0,0,169,168,1,0,0,0,169,170,1,0,0,
+        0,170,172,1,0,0,0,171,173,5,20,0,0,172,171,1,0,0,0,172,173,1,0,0,
+        0,173,175,1,0,0,0,174,176,5,24,0,0,175,174,1,0,0,0,175,176,1,0,0,
+        0,176,178,1,0,0,0,177,179,5,17,0,0,178,177,1,0,0,0,178,179,1,0,0,
+        0,179,181,1,0,0,0,180,182,5,20,0,0,181,180,1,0,0,0,181,182,1,0,0,
+        0,182,185,1,0,0,0,183,185,5,1,0,0,184,167,1,0,0,0,184,183,1,0,0,
+        0,185,27,1,0,0,0,186,189,3,32,16,0,187,189,3,30,15,0,188,186,1,0,
+        0,0,188,187,1,0,0,0,189,29,1,0,0,0,190,191,7,1,0,0,191,31,1,0,0,
+        0,192,193,7,2,0,0,193,33,1,0,0,0,194,195,7,3,0,0,195,35,1,0,0,0,
+        31,45,79,90,94,99,104,109,114,116,120,123,126,129,133,137,140,143,
+        146,149,152,156,159,162,165,169,172,175,178,181,184,188
     ]
 
 class ChatBotCommandParser ( Parser ):
@@ -89,10 +96,11 @@ class ChatBotCommandParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'create'", "'event'", "'at'", "'show'", 
                      "'tasks'", "'update'", "'change'", "'time'", "'to'", 
-                     "'help'", "'for'", "':'", "','", "'t'", "'i'", "'m'", 
-                     "'e'", "'u'", "'p'", "'d'", "'a'", "'s'", "'h'", "'o'", 
-                     "'w'", "'c'", "'r'", "'ev'", "'eve'", "'even'", "'ta'", 
-                     "'tas'", "'task'" ]
+                     "'help'", "'for'", "':'", "','", "'hi'", "'hello'", 
+                     "'hey'", "'t'", "'i'", "'m'", "'e'", "'u'", "'p'", 
+                     "'d'", "'a'", "'s'", "'h'", "'o'", "'w'", "'c'", "'r'", 
+                     "'ev'", "'eve'", "'even'", "'ta'", "'tas'", "'task'", 
+                     "'he'", "'hel'", "'hell'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -102,7 +110,9 @@ class ChatBotCommandParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "STRING", "DATETIME", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "STRING", "DATETIME", "WS" ]
 
     RULE_command = 0
     RULE_createEvent = 1
@@ -112,20 +122,22 @@ class ChatBotCommandParser ( Parser ):
     RULE_showEvent = 5
     RULE_createTasks = 6
     RULE_timeToEvent = 7
-    RULE_partialCreateCommand = 8
-    RULE_partialTimeTo = 9
-    RULE_partialUpdate = 10
-    RULE_partialShow = 11
-    RULE_partialCreate = 12
-    RULE_afterCreate = 13
-    RULE_partialEvent = 14
-    RULE_partialTask = 15
+    RULE_greetingCommand = 8
+    RULE_partialCreateCommand = 9
+    RULE_partialTimeTo = 10
+    RULE_partialUpdate = 11
+    RULE_partialShow = 12
+    RULE_partialCreate = 13
+    RULE_afterCreate = 14
+    RULE_partialEvent = 15
+    RULE_partialTask = 16
+    RULE_partialGreeting = 17
 
     ruleNames =  [ "command", "createEvent", "showTasks", "updateEvent", 
                    "helpCommand", "showEvent", "createTasks", "timeToEvent", 
-                   "partialCreateCommand", "partialTimeTo", "partialUpdate", 
-                   "partialShow", "partialCreate", "afterCreate", "partialEvent", 
-                   "partialTask" ]
+                   "greetingCommand", "partialCreateCommand", "partialTimeTo", 
+                   "partialUpdate", "partialShow", "partialCreate", "afterCreate", 
+                   "partialEvent", "partialTask", "partialGreeting" ]
 
     EOF = Token.EOF
     T__0=1
@@ -161,9 +173,15 @@ class ChatBotCommandParser ( Parser ):
     T__30=31
     T__31=32
     T__32=33
-    STRING=34
-    DATETIME=35
-    WS=36
+    T__33=34
+    T__34=35
+    T__35=36
+    T__36=37
+    T__37=38
+    T__38=39
+    STRING=40
+    DATETIME=41
+    WS=42
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -213,6 +231,10 @@ class ChatBotCommandParser ( Parser ):
             return self.getTypedRuleContext(ChatBotCommandParser.PartialCreateCommandContext,0)
 
 
+        def greetingCommand(self):
+            return self.getTypedRuleContext(ChatBotCommandParser.GreetingCommandContext,0)
+
+
         def getRuleIndex(self):
             return ChatBotCommandParser.RULE_command
 
@@ -230,55 +252,61 @@ class ChatBotCommandParser ( Parser ):
         localctx = ChatBotCommandParser.CommandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_command)
         try:
-            self.state = 40
+            self.state = 45
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 32
+                self.state = 36
                 self.createEvent()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 33
+                self.state = 37
                 self.showTasks()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 34
+                self.state = 38
                 self.updateEvent()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 35
+                self.state = 39
                 self.helpCommand()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 36
+                self.state = 40
                 self.showEvent()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 37
+                self.state = 41
                 self.createTasks()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 38
+                self.state = 42
                 self.timeToEvent()
                 pass
 
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
-                self.state = 39
+                self.state = 43
                 self.partialCreateCommand()
+                pass
+
+            elif la_ == 9:
+                self.enterOuterAlt(localctx, 9)
+                self.state = 44
+                self.greetingCommand()
                 pass
 
 
@@ -322,15 +350,15 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_createEvent)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 42
+            self.state = 47
             self.match(ChatBotCommandParser.T__0)
-            self.state = 43
+            self.state = 48
             self.match(ChatBotCommandParser.T__1)
-            self.state = 44
+            self.state = 49
             self.match(ChatBotCommandParser.STRING)
-            self.state = 45
+            self.state = 50
             self.match(ChatBotCommandParser.T__2)
-            self.state = 46
+            self.state = 51
             self.match(ChatBotCommandParser.DATETIME)
         except RecognitionException as re:
             localctx.exception = re
@@ -367,9 +395,9 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_showTasks)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 48
+            self.state = 53
             self.match(ChatBotCommandParser.T__3)
-            self.state = 49
+            self.state = 54
             self.match(ChatBotCommandParser.T__4)
         except RecognitionException as re:
             localctx.exception = re
@@ -411,19 +439,19 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_updateEvent)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 51
-            self.match(ChatBotCommandParser.T__5)
-            self.state = 52
-            self.match(ChatBotCommandParser.T__1)
-            self.state = 53
-            self.match(ChatBotCommandParser.STRING)
-            self.state = 54
-            self.match(ChatBotCommandParser.T__6)
-            self.state = 55
-            self.match(ChatBotCommandParser.T__7)
             self.state = 56
-            self.match(ChatBotCommandParser.T__8)
+            self.match(ChatBotCommandParser.T__5)
             self.state = 57
+            self.match(ChatBotCommandParser.T__1)
+            self.state = 58
+            self.match(ChatBotCommandParser.STRING)
+            self.state = 59
+            self.match(ChatBotCommandParser.T__6)
+            self.state = 60
+            self.match(ChatBotCommandParser.T__7)
+            self.state = 61
+            self.match(ChatBotCommandParser.T__8)
+            self.state = 62
             self.match(ChatBotCommandParser.DATETIME)
         except RecognitionException as re:
             localctx.exception = re
@@ -460,7 +488,7 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_helpCommand)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 59
+            self.state = 64
             self.match(ChatBotCommandParser.T__9)
         except RecognitionException as re:
             localctx.exception = re
@@ -497,9 +525,9 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_showEvent)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 61
+            self.state = 66
             self.match(ChatBotCommandParser.T__3)
-            self.state = 62
+            self.state = 67
             self.match(ChatBotCommandParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -542,27 +570,27 @@ class ChatBotCommandParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 64
-            self.match(ChatBotCommandParser.T__0)
-            self.state = 65
-            self.match(ChatBotCommandParser.T__4)
-            self.state = 66
-            self.match(ChatBotCommandParser.T__10)
-            self.state = 67
-            self.match(ChatBotCommandParser.STRING)
-            self.state = 68
-            self.match(ChatBotCommandParser.T__11)
             self.state = 69
+            self.match(ChatBotCommandParser.T__0)
+            self.state = 70
+            self.match(ChatBotCommandParser.T__4)
+            self.state = 71
+            self.match(ChatBotCommandParser.T__10)
+            self.state = 72
             self.match(ChatBotCommandParser.STRING)
+            self.state = 73
+            self.match(ChatBotCommandParser.T__11)
             self.state = 74
+            self.match(ChatBotCommandParser.STRING)
+            self.state = 79
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==13:
-                self.state = 70
+                self.state = 75
                 self.match(ChatBotCommandParser.T__12)
-                self.state = 71
-                self.match(ChatBotCommandParser.STRING)
                 self.state = 76
+                self.match(ChatBotCommandParser.STRING)
+                self.state = 81
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -603,14 +631,82 @@ class ChatBotCommandParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_timeToEvent)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 77
+            self.state = 82
             self.match(ChatBotCommandParser.T__7)
-            self.state = 78
+            self.state = 83
             self.match(ChatBotCommandParser.T__8)
-            self.state = 79
+            self.state = 84
             self.match(ChatBotCommandParser.T__1)
-            self.state = 80
+            self.state = 85
             self.match(ChatBotCommandParser.STRING)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class GreetingCommandContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return ChatBotCommandParser.RULE_greetingCommand
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class GreetingContext(GreetingCommandContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a ChatBotCommandParser.GreetingCommandContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def STRING(self):
+            return self.getToken(ChatBotCommandParser.STRING, 0)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGreeting" ):
+                return visitor.visitGreeting(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def greetingCommand(self):
+
+        localctx = ChatBotCommandParser.GreetingCommandContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_greetingCommand)
+        self._la = 0 # Token type
+        try:
+            localctx = ChatBotCommandParser.GreetingContext(self, localctx)
+            self.enterOuterAlt(localctx, 1)
+            self.state = 87
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 114688) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+            self.state = 90
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==13:
+                self.state = 88
+                self.match(ChatBotCommandParser.T__12)
+                self.state = 89
+                self.match(ChatBotCommandParser.STRING)
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -647,6 +743,10 @@ class ChatBotCommandParser ( Parser ):
             return self.getTypedRuleContext(ChatBotCommandParser.PartialTimeToContext,0)
 
 
+        def partialGreeting(self):
+            return self.getTypedRuleContext(ChatBotCommandParser.PartialGreetingContext,0)
+
+
         def getRuleIndex(self):
             return ChatBotCommandParser.RULE_partialCreateCommand
 
@@ -662,21 +762,21 @@ class ChatBotCommandParser ( Parser ):
     def partialCreateCommand(self):
 
         localctx = ChatBotCommandParser.PartialCreateCommandContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_partialCreateCommand)
+        self.enterRule(localctx, 18, self.RULE_partialCreateCommand)
         self._la = 0 # Token type
         try:
-            self.state = 101
+            self.state = 116
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 82
+                self.state = 92
                 self.partialCreate()
-                self.state = 84
+                self.state = 94
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 16911581220) != 0):
-                    self.state = 83
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 135292649508) != 0):
+                    self.state = 93
                     self.afterCreate()
 
 
@@ -684,13 +784,13 @@ class ChatBotCommandParser ( Parser ):
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 89
+                self.state = 99
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==4 or _la==22:
-                    self.state = 86
+                if _la==4 or _la==25:
+                    self.state = 96
                     self.partialShow()
-                    self.state = 87
+                    self.state = 97
                     self.afterCreate()
 
 
@@ -698,13 +798,13 @@ class ChatBotCommandParser ( Parser ):
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 94
+                self.state = 104
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==6 or _la==18:
-                    self.state = 91
+                if _la==6 or _la==21:
+                    self.state = 101
                     self.partialUpdate()
-                    self.state = 92
+                    self.state = 102
                     self.afterCreate()
 
 
@@ -712,13 +812,27 @@ class ChatBotCommandParser ( Parser ):
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 99
+                self.state = 109
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==8 or _la==14:
-                    self.state = 96
+                if _la==8 or _la==17:
+                    self.state = 106
                     self.partialTimeTo()
-                    self.state = 97
+                    self.state = 107
+                    self.afterCreate()
+
+
+                pass
+
+            elif la_ == 5:
+                self.enterOuterAlt(localctx, 5)
+                self.state = 114
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 962139897856) != 0):
+                    self.state = 111
+                    self.partialGreeting()
+                    self.state = 112
                     self.afterCreate()
 
 
@@ -757,55 +871,55 @@ class ChatBotCommandParser ( Parser ):
     def partialTimeTo(self):
 
         localctx = ChatBotCommandParser.PartialTimeToContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_partialTimeTo)
+        self.enterRule(localctx, 20, self.RULE_partialTimeTo)
         self._la = 0 # Token type
         try:
-            self.state = 118
+            self.state = 133
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [14]:
+            if token in [17]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 103
-                self.match(ChatBotCommandParser.T__13)
+                self.state = 118
+                self.match(ChatBotCommandParser.T__16)
 
-                self.state = 105
+                self.state = 120
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==15:
-                    self.state = 104
-                    self.match(ChatBotCommandParser.T__14)
+                if _la==18:
+                    self.state = 119
+                    self.match(ChatBotCommandParser.T__17)
 
 
-                self.state = 108
+                self.state = 123
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==16:
-                    self.state = 107
-                    self.match(ChatBotCommandParser.T__15)
+                if _la==19:
+                    self.state = 122
+                    self.match(ChatBotCommandParser.T__18)
 
 
-                self.state = 111
+                self.state = 126
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
                 if la_ == 1:
-                    self.state = 110
-                    self.match(ChatBotCommandParser.T__16)
+                    self.state = 125
+                    self.match(ChatBotCommandParser.T__19)
 
 
-                self.state = 114
+                self.state = 129
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==9:
-                    self.state = 113
+                    self.state = 128
                     self.match(ChatBotCommandParser.T__8)
 
 
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 116
+                self.state = 131
                 self.match(ChatBotCommandParser.T__7)
-                self.state = 117
+                self.state = 132
                 self.match(ChatBotCommandParser.T__8)
                 pass
             else:
@@ -843,61 +957,61 @@ class ChatBotCommandParser ( Parser ):
     def partialUpdate(self):
 
         localctx = ChatBotCommandParser.PartialUpdateContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_partialUpdate)
+        self.enterRule(localctx, 22, self.RULE_partialUpdate)
         self._la = 0 # Token type
         try:
-            self.state = 137
+            self.state = 152
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [18]:
+            if token in [21]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 120
-                self.match(ChatBotCommandParser.T__17)
+                self.state = 135
+                self.match(ChatBotCommandParser.T__20)
 
-                self.state = 122
+                self.state = 137
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==19:
-                    self.state = 121
-                    self.match(ChatBotCommandParser.T__18)
+                if _la==22:
+                    self.state = 136
+                    self.match(ChatBotCommandParser.T__21)
 
 
-                self.state = 125
+                self.state = 140
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==20:
-                    self.state = 124
-                    self.match(ChatBotCommandParser.T__19)
+                if _la==23:
+                    self.state = 139
+                    self.match(ChatBotCommandParser.T__22)
 
 
-                self.state = 128
+                self.state = 143
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==21:
-                    self.state = 127
-                    self.match(ChatBotCommandParser.T__20)
+                if _la==24:
+                    self.state = 142
+                    self.match(ChatBotCommandParser.T__23)
 
 
-                self.state = 131
+                self.state = 146
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
                 if la_ == 1:
-                    self.state = 130
-                    self.match(ChatBotCommandParser.T__13)
-
-
-                self.state = 134
-                self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
-                if la_ == 1:
-                    self.state = 133
+                    self.state = 145
                     self.match(ChatBotCommandParser.T__16)
+
+
+                self.state = 149
+                self._errHandler.sync(self)
+                la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
+                if la_ == 1:
+                    self.state = 148
+                    self.match(ChatBotCommandParser.T__19)
 
 
                 pass
             elif token in [6]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 136
+                self.state = 151
                 self.match(ChatBotCommandParser.T__5)
                 pass
             else:
@@ -935,45 +1049,45 @@ class ChatBotCommandParser ( Parser ):
     def partialShow(self):
 
         localctx = ChatBotCommandParser.PartialShowContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_partialShow)
+        self.enterRule(localctx, 24, self.RULE_partialShow)
         self._la = 0 # Token type
         try:
-            self.state = 150
+            self.state = 165
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [22]:
+            if token in [25]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 139
-                self.match(ChatBotCommandParser.T__21)
+                self.state = 154
+                self.match(ChatBotCommandParser.T__24)
 
-                self.state = 141
+                self.state = 156
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==23:
-                    self.state = 140
-                    self.match(ChatBotCommandParser.T__22)
+                if _la==26:
+                    self.state = 155
+                    self.match(ChatBotCommandParser.T__25)
 
 
-                self.state = 144
+                self.state = 159
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==24:
-                    self.state = 143
-                    self.match(ChatBotCommandParser.T__23)
+                if _la==27:
+                    self.state = 158
+                    self.match(ChatBotCommandParser.T__26)
 
 
-                self.state = 147
+                self.state = 162
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==25:
-                    self.state = 146
-                    self.match(ChatBotCommandParser.T__24)
+                if _la==28:
+                    self.state = 161
+                    self.match(ChatBotCommandParser.T__27)
 
 
                 pass
             elif token in [4]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 149
+                self.state = 164
                 self.match(ChatBotCommandParser.T__3)
                 pass
             else:
@@ -1011,61 +1125,61 @@ class ChatBotCommandParser ( Parser ):
     def partialCreate(self):
 
         localctx = ChatBotCommandParser.PartialCreateContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_partialCreate)
+        self.enterRule(localctx, 26, self.RULE_partialCreate)
         self._la = 0 # Token type
         try:
-            self.state = 169
+            self.state = 184
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [26]:
+            if token in [29]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 152
-                self.match(ChatBotCommandParser.T__25)
+                self.state = 167
+                self.match(ChatBotCommandParser.T__28)
 
-                self.state = 154
+                self.state = 169
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==27:
-                    self.state = 153
-                    self.match(ChatBotCommandParser.T__26)
+                if _la==30:
+                    self.state = 168
+                    self.match(ChatBotCommandParser.T__29)
 
 
-                self.state = 157
-                self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,23,self._ctx)
-                if la_ == 1:
-                    self.state = 156
-                    self.match(ChatBotCommandParser.T__16)
-
-
-                self.state = 160
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if _la==21:
-                    self.state = 159
-                    self.match(ChatBotCommandParser.T__20)
-
-
-                self.state = 163
+                self.state = 172
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
                 if la_ == 1:
-                    self.state = 162
-                    self.match(ChatBotCommandParser.T__13)
+                    self.state = 171
+                    self.match(ChatBotCommandParser.T__19)
 
 
-                self.state = 166
+                self.state = 175
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
+                _la = self._input.LA(1)
+                if _la==24:
+                    self.state = 174
+                    self.match(ChatBotCommandParser.T__23)
+
+
+                self.state = 178
+                self._errHandler.sync(self)
+                la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
                 if la_ == 1:
-                    self.state = 165
+                    self.state = 177
                     self.match(ChatBotCommandParser.T__16)
+
+
+                self.state = 181
+                self._errHandler.sync(self)
+                la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
+                if la_ == 1:
+                    self.state = 180
+                    self.match(ChatBotCommandParser.T__19)
 
 
                 pass
             elif token in [1]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 168
+                self.state = 183
                 self.match(ChatBotCommandParser.T__0)
                 pass
             else:
@@ -1110,19 +1224,19 @@ class ChatBotCommandParser ( Parser ):
     def afterCreate(self):
 
         localctx = ChatBotCommandParser.AfterCreateContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_afterCreate)
+        self.enterRule(localctx, 28, self.RULE_afterCreate)
         try:
-            self.state = 173
+            self.state = 188
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [5, 14, 31, 32, 33]:
+            if token in [5, 17, 34, 35, 36]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 171
+                self.state = 186
                 self.partialTask()
                 pass
-            elif token in [2, 17, 28, 29, 30]:
+            elif token in [2, 20, 31, 32, 33]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 172
+                self.state = 187
                 self.partialEvent()
                 pass
             else:
@@ -1160,13 +1274,13 @@ class ChatBotCommandParser ( Parser ):
     def partialEvent(self):
 
         localctx = ChatBotCommandParser.PartialEventContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_partialEvent)
+        self.enterRule(localctx, 30, self.RULE_partialEvent)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 175
+            self.state = 190
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1879179268) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 15033434116) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1203,13 +1317,56 @@ class ChatBotCommandParser ( Parser ):
     def partialTask(self):
 
         localctx = ChatBotCommandParser.PartialTaskContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_partialTask)
+        self.enterRule(localctx, 32, self.RULE_partialTask)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 177
+            self.state = 192
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 15032401952) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 120259215392) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class PartialGreetingContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return ChatBotCommandParser.RULE_partialGreeting
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPartialGreeting" ):
+                return visitor.visitPartialGreeting(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def partialGreeting(self):
+
+        localctx = ChatBotCommandParser.PartialGreetingContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 34, self.RULE_partialGreeting)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 194
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 962139897856) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

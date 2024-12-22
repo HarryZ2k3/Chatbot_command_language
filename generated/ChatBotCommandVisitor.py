@@ -1,4 +1,4 @@
-# Generated from c:/Users/trieu/Downloads/Chatbot_command_language-main/Chatbot_command_language-main/ChatBotCommand.g4 by ANTLR 4.13.2
+# Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .ChatBotCommandParser import ChatBotCommandParser
@@ -49,6 +49,11 @@ class ChatBotCommandVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by ChatBotCommandParser#Greeting.
+    def visitGreeting(self, ctx:ChatBotCommandParser.GreetingContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by ChatBotCommandParser#partialCreateCommand.
     def visitPartialCreateCommand(self, ctx:ChatBotCommandParser.PartialCreateCommandContext):
         return self.visitChildren(ctx)
@@ -86,6 +91,11 @@ class ChatBotCommandVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by ChatBotCommandParser#partialTask.
     def visitPartialTask(self, ctx:ChatBotCommandParser.PartialTaskContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by ChatBotCommandParser#partialGreeting.
+    def visitPartialGreeting(self, ctx:ChatBotCommandParser.PartialGreetingContext):
         return self.visitChildren(ctx)
 
 
