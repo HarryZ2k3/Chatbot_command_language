@@ -1,5 +1,3 @@
-Here’s a **README** for your chatbot to be hosted on a GitHub repository:
-
 ---
 
 # ChatBot Command Language
