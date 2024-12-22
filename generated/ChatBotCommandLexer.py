@@ -1,4 +1,4 @@
-# Generated from c:/Users/trieu/Downloads/Chatbot_command_language-main/Chatbot_command_language-main/ChatBotCommand.g4 by ANTLR 4.13.2
+# Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
