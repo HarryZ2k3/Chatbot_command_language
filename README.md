@@ -145,5 +145,3 @@ This project is licensed under the [MIT License](LICENSE).
 - **Pham Thai Quoc** - [GitHub](https://github.com/tquoc0112)
 
 ---
-
-Let me know if you'd like to customize this README further! 🚀
