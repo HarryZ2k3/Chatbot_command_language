@@ -1,4 +1,4 @@
-// Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
+// Generated from c:/Users/trieu/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -112,6 +112,18 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterGreeting(ChatBotCommandParser.GreetingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGreeting(ChatBotCommandParser.GreetingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPartialCreateCommand(ChatBotCommandParser.PartialCreateCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -203,6 +215,18 @@ public class ChatBotCommandBaseListener implements ChatBotCommandListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPartialTask(ChatBotCommandParser.PartialTaskContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

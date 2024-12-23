@@ -30,6 +30,9 @@ class ChatApp:
         self.main_frame.columnconfigure(0, weight=1)
         self.main_frame.rowconfigure(0, weight=1)
 
+        # Scrollbar for chat display
+        self.scrollbar = tk.Scrollbar(self.main_frame, orient=tk.VERTICAL)
+
         # Scrollable chat display
         self.chat_display = tk.Text(
             self.main_frame,
@@ -38,8 +41,13 @@ class ChatApp:
             bg=self.bg_color,
             fg=self.text_color,
             font=("Arial", 12),
+            yscrollcommand=self.scrollbar.set,  # Attach the scrollbar
         )
-        self.chat_display.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=5, pady=5)
+        self.chat_display.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
+
+        # Configure the scrollbar
+        self.scrollbar.config(command=self.chat_display.yview)
+        self.scrollbar.grid(row=0, column=1, sticky="ns")
 
         # Input field and send button
         self.input_frame = ttk.Frame(self.main_frame)
@@ -58,6 +66,7 @@ class ChatApp:
 
         # Event binding for "Enter" key
         self.input_field.bind("<Return>", lambda event: self.handle_message())
+
 
     def display_message(self, text, sender="user"):
         """Display a message in the chat window."""
@@ -112,6 +121,8 @@ class ChatApp:
             self.input_field.delete(0, tk.END)
             self.display_message(user_message, sender="user")  # Display user message
             bot_response = handle_input(user_message)  # Get bot response
+            if bot_response == "Exiting chatbot.":  # Check for the exit condition
+                self.root.quit()  # Quit the application
             self.root.after(500, lambda: self.display_message(bot_response, sender="bot"))
 
     def on_input_change(self, *_):
