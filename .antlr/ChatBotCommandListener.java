@@ -1,4 +1,4 @@
-// Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
+// Generated from c:/Users/trieu/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -86,4 +86,106 @@ public interface ChatBotCommandListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Greeting}
+	 * labeled alternative in {@link ChatBotCommandParser#greetingCommand}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreeting(ChatBotCommandParser.GreetingContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Greeting}
+	 * labeled alternative in {@link ChatBotCommandParser#greetingCommand}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreeting(ChatBotCommandParser.GreetingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialCreateCommand}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialCreateCommand(ChatBotCommandParser.PartialCreateCommandContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialCreateCommand}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialCreateCommand(ChatBotCommandParser.PartialCreateCommandContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialTimeTo}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialTimeTo(ChatBotCommandParser.PartialTimeToContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialTimeTo}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialTimeTo(ChatBotCommandParser.PartialTimeToContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialUpdate}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialUpdate(ChatBotCommandParser.PartialUpdateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialUpdate}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialUpdate(ChatBotCommandParser.PartialUpdateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialShow}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialShow(ChatBotCommandParser.PartialShowContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialShow}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialShow(ChatBotCommandParser.PartialShowContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialCreate}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialCreate(ChatBotCommandParser.PartialCreateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialCreate}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialCreate(ChatBotCommandParser.PartialCreateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#afterCreate}.
+	 * @param ctx the parse tree
+	 */
+	void enterAfterCreate(ChatBotCommandParser.AfterCreateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#afterCreate}.
+	 * @param ctx the parse tree
+	 */
+	void exitAfterCreate(ChatBotCommandParser.AfterCreateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialEvent}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialEvent(ChatBotCommandParser.PartialEventContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialEvent}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialEvent(ChatBotCommandParser.PartialEventContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialTask}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialTask(ChatBotCommandParser.PartialTaskContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialTask}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialTask(ChatBotCommandParser.PartialTaskContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialGreeting}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialGreeting}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx);
 }
