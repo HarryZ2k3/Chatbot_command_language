@@ -1,4 +1,4 @@
-// Generated from g:/WORK/CODE/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
+// Generated from c:/Users/trieu/Chatbot_command_language/ChatBotCommand.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -87,6 +87,18 @@ public interface ChatBotCommandListener extends ParseTreeListener {
 	 */
 	void exitTimeToEvent(ChatBotCommandParser.TimeToEventContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Greeting}
+	 * labeled alternative in {@link ChatBotCommandParser#greetingCommand}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreeting(ChatBotCommandParser.GreetingContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Greeting}
+	 * labeled alternative in {@link ChatBotCommandParser#greetingCommand}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreeting(ChatBotCommandParser.GreetingContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialCreateCommand}.
 	 * @param ctx the parse tree
 	 */
@@ -166,4 +178,14 @@ public interface ChatBotCommandListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPartialTask(ChatBotCommandParser.PartialTaskContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ChatBotCommandParser#partialGreeting}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ChatBotCommandParser#partialGreeting}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialGreeting(ChatBotCommandParser.PartialGreetingContext ctx);
 }
