@@ -187,7 +187,7 @@ class ChatApp:
         elif flag == "update event":
             suggestion_text = "event"
         elif flag == "update event syntax":
-            suggestion_text = '"<event_name>" at <YYYY-MM-DD HH:MM>'
+            suggestion_text = '"<event_name>" change time to <YYYY-MM-DD HH:MM>'
 
             # Additional handling for the partial update input commands
         elif flag == "before timeto":
