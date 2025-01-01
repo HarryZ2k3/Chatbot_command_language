@@ -212,7 +212,6 @@ class ChatApp:
 
 def regenerate_antlr_files():
     """Regenerate ANTLR files using the grammar definition."""
-    # Define your variables
     DIR = os.path.dirname(__file__)  
     ANTLR_JAR = os.path.join(DIR, 'antlr-4.13.2-complete.jar')  # Relative path to the ANTLR jar inside the project
     CPL_Dest = os.path.join(DIR, 'generated')  

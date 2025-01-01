@@ -120,23 +120,6 @@ Available commands:
         minutes = seconds // 60
         return f"Time to '{event_name}': {int(days)} days, {int(hours)} hours, {int(minutes)} minutes."
         
-    # def visitPartialCreateCommand(self, ctx):
-    #     """Handle partial detection of 'create' and its subcommands."""
-    #     if ctx.partialCreate():
-    #         create_text = ctx.partialCreate().getText()
-            
-    #         if create_text == "create":
-    #             if ctx.afterCreate():
-    #                 after_create_text = ctx.afterCreate().getText()
-    #                 if after_create_text.startswith("task"):
-    #                     return f"Partial input detected: 'create task' (in progress)"
-    #                 elif after_create_text.startswith("event"):
-    #                     return f"Partial input detected: 'create event' (in progress)"
-    #             return f"Partial input detected: 'create' (continue typing)"
-            
-    #         return f"Partial input detected: '{create_text}' (continue typing)"
-        
-    #     return "No partial command detected."
 
     def visitPartialCreateCommand(self, ctx):
         """Handle partial detection of 'create' and 'show' commands and their subcommands."""
